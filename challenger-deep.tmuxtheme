@@ -12,18 +12,15 @@
 set -g status-interval 1
 
 # Basic status bar colors
-set -g status-fg colour15
-set -g status-bg colour0
+set -g status-style fg=colour15,bg=colour0
 
 # Left side of status bar
-set -g status-left-bg colour0
-set -g status-left-fg colour15
+set -g status-left-style fg=colour15,bg=colour0
 set -g status-left-length 40
 set -g status-left "#[fg=colour0,bg=colour6,nobold] $#S #[fg=colour15,bg=colour0,bold]"
 
 # Right side of status bar
-set -g status-right-bg colour0
-set -g status-right-fg colour15
+set -g status-right-style fg=colour15,bg=colour0
 set -g status-right-length 150
 set -g status-right "##[fg=colour0,bg=colour6]  W#I  P#P @#H "
 
@@ -32,12 +29,11 @@ set -g window-status-format "  #I:#W#F  "
 set -g window-status-current-format "#[fg=colour0,bg=colour6,nobold] #I:#W#F "
 
 # Current window status
-set -g window-status-current-bg colour6
-set -g window-status-current-fg colour0
+set -g window-status-current-style fg=colour0,bg=colour6
 
 # Window with activity status
-set -g window-status-activity-bg colour6 # fg and bg are flipped here due to
-set -g window-status-activity-fg colour8 # a bug in tmux
+# fg and bg are flipped here due to a bug in tmux
+set -g window-status-activity-style fg=colour8,bg=colour6
 
 # Window separator
 set -g window-status-separator ""
@@ -46,12 +42,10 @@ set -g window-status-separator ""
 set -g status-justify centre
 
 # Pane border
-set -g pane-border-bg default
-set -g pane-border-fg colour8
+set -g pane-border-style fg=colour8,bg=default
 
 # Active pane border
-set -g pane-active-border-bg default
-set -g pane-active-border-fg colour6
+set -g pane-active-border-style fg=colour6,bg=default
 
 # Pane number indicator
 set -g display-panes-colour colour0
@@ -62,13 +56,10 @@ set -g clock-mode-colour colour6
 set -g clock-mode-style 24
 
 # Message
-set -g message-bg colour6
-set -g message-fg colour0
+set -g message-style fg=colour0,bg=colour6
 
 # Command message
-set -g message-command-bg colour6
-set -g message-command-fg colour0
+set -g message-command-style fg=colour0,bg=colour6
 
 # Mode
-set -g mode-bg colour6
-set -g mode-fg colour0
+set -g mode-style fg=colour0,bg=colour6
